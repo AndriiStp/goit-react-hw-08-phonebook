@@ -1,0 +1,11 @@
+.contact__list {
+  text-align: center;
+  list-style: none;
+}
+.item {
+  margin-bottom: 5px;
+}
+
+.button__delete {
+  margin-left: 20px;
+}
