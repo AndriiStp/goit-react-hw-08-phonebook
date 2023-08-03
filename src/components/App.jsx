@@ -1,4 +1,3 @@
-// import { useState, useEffect } from 'react';
 import css from './App.module.css';
 import Form from 'components/Form/Form';
 import ContactList from 'components/ContactList/ContactList';
