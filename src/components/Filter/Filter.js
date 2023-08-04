@@ -2,7 +2,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import css from './Filter.module.css';
-import { filterContact } from 'redux/FilterSlice';
+import { filterContact } from 'redux/contacts/FilterSlice';
 
 const Filter = () => {
   const dispatch = useDispatch();
