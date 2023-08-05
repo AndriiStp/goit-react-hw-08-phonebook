@@ -1,0 +1,23 @@
+.userBox {
+  display: flex;
+}
+
+.paragraph {
+  font-weight: 500;
+  color: rgb(131, 116, 127);
+  margin-right: 10px;
+}
+
+.button {
+  text-decoration: none;
+  font-weight: 700;
+  color: rgb(131, 116, 127);
+  border: 1px solid rgb(131, 116, 127);
+  border-radius: 10px;
+}
+
+.button:hover,
+.button:focus {
+  background-color: rgb(184, 179, 174);
+  color: aliceblue;
+}

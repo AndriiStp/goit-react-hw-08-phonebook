@@ -1,6 +1,24 @@
 .filter__box {
   text-align: center;
 }
+
+.label {
+  font-weight: 500;
+  font-size: 16px;
+  color: rgb(131, 116, 127);
+}
+
 .input {
-  margin-left: 20px;
+  padding: 5px;
+  border: 2px solid #17a2b8;
+  border-radius: 10px;
+  margin-left: 15px;
+}
+
+.input:hover,
+.input:focus,
+.input:active {
+  background-color: rgb(233, 229, 226);
+  color: aliceblue;
+  border: 2px solid #17a2b8;
 }
