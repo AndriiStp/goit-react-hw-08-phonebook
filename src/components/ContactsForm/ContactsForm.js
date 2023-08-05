@@ -27,11 +27,11 @@ const ContactsForm = () => {
         return;
       }
       dispatch(addContact({ nameInput, numberInput }));
-      form.reset();
     } else {
       alert(
         `A contact with the name ${form.elements.name.value} already exists`
       );
+      form.reset();
     }
   };
 
