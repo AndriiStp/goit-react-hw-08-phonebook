@@ -14,17 +14,19 @@ const ContactList = () => {
   };
 
   const filtered = contacts.filter(contact =>
-    contact.nameInput.toLowerCase().includes(filterContacts.toLowerCase())
+    contact.name.toLowerCase().includes(filterContacts.toLowerCase())
   );
 
   return (
     <ul className={css.contact__list}>
-      {filtered.map(({ id, nameInput, numberInput }) => (
+      {filtered.map(({ id, name, number }) => (
         <li className={css.item} key={id}>
-          {nameInput}: {numberInput}
+          {name}: {number}
           <button
             type="button"
-            onClick={() => handleDelete(id)}
+            onClick={() => {
+              handleDelete(id);
+            }}
             className={css.button__delete}
           >
             Delete

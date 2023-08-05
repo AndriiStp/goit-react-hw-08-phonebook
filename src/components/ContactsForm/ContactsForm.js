@@ -2,7 +2,6 @@ import css from './ContactsForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
-import React from 'react';
 
 const ContactsForm = () => {
   const contacts = useSelector(selectContacts);
@@ -11,22 +10,21 @@ const ContactsForm = () => {
   const handleAdd = e => {
     e.preventDefault();
     const form = e.target;
-    const { name, number } = form.elements;
+    // const { name, number } = form.elements;
     const existingContact = contacts.find(
       contact =>
-        contact.nameInput.toLowerCase() ===
-        form.elements.name.value.toLowerCase()
+        contact.name.toLowerCase() === form.elements.name.value.toLowerCase()
     );
 
     if (!existingContact) {
-      const nameInput = name.value;
-      const numberInput = number.value;
+      const name = form.elements.name.value;
+      const number = form.elements.number.value;
 
-      if (nameInput.trim() === '' || numberInput.trim() === '') {
+      if (name.trim() === '' || number.trim() === '') {
         alert('Please fill all required fields!');
         return;
       }
-      dispatch(addContact({ nameInput, numberInput }));
+      dispatch(addContact({ name, number }));
     } else {
       alert(
         `A contact with the name ${form.elements.name.value} already exists`
