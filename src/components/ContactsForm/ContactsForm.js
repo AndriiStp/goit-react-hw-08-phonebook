@@ -5,7 +5,7 @@ import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 import React from 'react';
 
-const Form = () => {
+const ContactsForm = () => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
@@ -68,4 +68,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default ContactsForm;
