@@ -49,15 +49,15 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
+    // const state = thunkAPI.getState();
+    const token = thunkAPI.getState().auth;
 
-    if (persistedToken === null) {
+    if (!token) {
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
 
     try {
-      setAuthHeader(persistedToken);
+      setAuthHeader(token);
       const res = await axios.get('/users/me');
       return res.data;
     } catch (error) {

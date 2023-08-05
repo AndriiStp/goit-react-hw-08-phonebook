@@ -1,5 +1,4 @@
 import css from './ContactsForm.module.css';
-import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
@@ -12,9 +11,7 @@ const ContactsForm = () => {
   const handleAdd = e => {
     e.preventDefault();
     const form = e.target;
-    const id = nanoid();
     const { name, number } = form.elements;
-
     const existingContact = contacts.find(
       contact =>
         contact.nameInput.toLowerCase() ===
@@ -29,10 +26,12 @@ const ContactsForm = () => {
         alert('Please fill all required fields!');
         return;
       }
-      dispatch(addContact({ id, nameInput, numberInput }));
+      dispatch(addContact({ nameInput, numberInput }));
       form.reset();
     } else {
-      alert(`A contact with the name ${name.value} already exists`);
+      alert(
+        `A contact with the name ${form.elements.name.value} already exists`
+      );
     }
   };
 
